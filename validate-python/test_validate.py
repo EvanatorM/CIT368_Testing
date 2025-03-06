@@ -89,7 +89,7 @@ class Test_TestValidate(unittest.TestCase):
         self.assertEqual("Not a grade", Validate.grade('ahsdif'))
 
     def test_ip_happy(self):
-        self.assertTrue("10.0.0.1")
+        self.assertTrue(Validate.ip("10.0.0.1"))
 
     def test_ip_bad(self):
         #ABUSE
@@ -100,7 +100,7 @@ class Test_TestValidate(unittest.TestCase):
             self.assertFalse(Validate.ip(str(line)))
 
     def test_mac_happy(self):
-        self.assertTrue("00-B3-A8-00-64-C2")
+        self.assertTrue(Validate.mac("00-B3-A8-00-64-C2"))
 
     def test_mac_bad(self):
         #ABUSE
@@ -111,7 +111,7 @@ class Test_TestValidate(unittest.TestCase):
             self.assertFalse(Validate.mac(str(line)))
 
     def test_md5_happy(self):
-        self.assertTrue("79054025255fb1a26e4bc422aef54eb4")
+        self.assertTrue(Validate.md5("79054025255fb1a26e4bc422aef54eb4"))
 
     def test_md5_bad(self):
         #ABUSE
